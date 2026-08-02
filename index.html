@@ -6,6 +6,7 @@
     <meta name="description" content="A modern portfolio landing page." />
     <title>Aditya — Independent Developer</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main class="hero">
@@ -140,23 +141,5 @@
       
     </main>
 
-    <script>
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.navigation__links');
-
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('is-open');
-          navToggle.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        navLinks.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('is-open');
-            navToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    </script>
   </body>
 </html>
