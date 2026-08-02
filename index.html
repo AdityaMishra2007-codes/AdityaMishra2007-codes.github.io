@@ -11,7 +11,12 @@
     <main class="hero">
       <nav class="navigation" aria-label="Primary navigation">
         <a class="brand" href="index.html" aria-label="Aditya home">Aditya.</a>
-        <div class="navigation__links">
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="navigation__links" id="primary-navigation">
           <a href="#work">Projects</a>
           <a href="#notes">Skills</a>
           <a href="contact">Contact</a>
@@ -134,5 +139,24 @@
 
       
     </main>
+
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.navigation__links');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    </script>
   </body>
 </html>
