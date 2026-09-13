@@ -4,6 +4,36 @@
   --muted: #b4c2dc;
   --cyan: #8de8ff;
   --line: rgba(194, 225, 255, 0.28);
+  --nav-border: rgba(194, 225, 255, 0.12);
+  --panel: linear-gradient(125deg, rgba(37, 57, 108, 0.96), rgba(25, 41, 82, 0.96));
+  --card: rgba(17, 35, 77, 0.45);
+  --card-hover: rgba(58, 93, 157, 0.65);
+  --card-text: #bdc8dc;
+  --detail-title: #d5f8ff;
+  --tool-text: #e0edf8;
+  --tool-bg: rgba(170, 215, 255, 0.14);
+  --button-text: #d9e8ff;
+  --button-bg: rgba(43, 71, 132, 0.72);
+  --button-border: rgba(194, 225, 255, 0.35);
+}
+
+[data-theme="light"] {
+  --bg: #f5f7f2;
+  --text: #173a67;
+  --muted: #4f6680;
+  --cyan: #245f9e;
+  --line: rgba(36, 95, 158, 0.24);
+  --nav-border: rgba(36, 95, 158, 0.18);
+  --panel: linear-gradient(125deg, #e5edf5, #d6e3f0);
+  --card: rgba(255, 255, 255, 0.7);
+  --card-hover: rgba(207, 224, 240, 0.95);
+  --card-text: #49627b;
+  --detail-title: #1c578d;
+  --tool-text: #315777;
+  --tool-bg: rgba(36, 95, 158, 0.1);
+  --button-text: #174c80;
+  --button-bg: #e5edf5;
+  --button-border: rgba(36, 95, 158, 0.35);
 }
 
 * {
@@ -22,6 +52,14 @@ body {
   background:
     radial-gradient(circle at 76% 16%, #3e5fa7 0%, transparent 31%),
     radial-gradient(circle at 14% 83%, #1c587c 0%, transparent 32%),
+    var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] body {
+  background:
+    radial-gradient(circle at 76% 16%, rgba(108, 160, 204, 0.25) 0%, transparent 31%),
+    radial-gradient(circle at 14% 83%, rgba(168, 194, 216, 0.28) 0%, transparent 32%),
     var(--bg);
 }
 
@@ -45,11 +83,11 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(24px, 5vw, 78px);
-  border-bottom: 1px solid rgba(194, 225, 255, 0.12);
+  border-bottom: 1px solid var(--nav-border);
 }
 
 .logo {
-  color: white;
+  color: var(--text);
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -1.7px;
@@ -62,11 +100,28 @@ nav {
 
 .nav-links a {
   margin-left: 30px;
-  color: #bdc9e1;
+  color: var(--muted);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.25s ease;
+}
+
+.theme-toggle {
+  padding: 8px 12px;
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  color: var(--button-text);
+  background: var(--button-bg);
+  font: 500 12px "DM Mono", monospace;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--cyan);
+  outline: none;
 }
 
 .nav-links a:hover,
@@ -130,7 +185,7 @@ h1 {
   overflow: hidden;
   padding: clamp(27px, 4.5vw, 64px);
   border-radius: 28px;
-  background: linear-gradient(125deg, rgba(37, 57, 108, 0.96), rgba(25, 41, 82, 0.96));
+  background: var(--panel);
 }
 
 .skills-panel::after {
@@ -203,7 +258,7 @@ h2 {
   filter: blur(8px);
   border: 1px solid var(--line);
   border-radius: 17px;
-  background: rgba(17, 35, 77, 0.45);
+  background: var(--card);
   transition: transform 0.35s ease, background 0.35s ease,
     border-color 0.35s ease, opacity 0.6s ease, filter 0.6s ease;
 }
@@ -225,7 +280,7 @@ h2 {
 .skill-card.selected {
   transform: translateY(-9px);
   border-color: var(--accent);
-  background: rgba(58, 93, 157, 0.65);
+  background: var(--card-hover);
 }
 
 .skill-card:hover::before,
@@ -257,7 +312,7 @@ h2 {
 .skill-card p {
   max-width: 310px;
   margin: 0;
-  color: #bdc8dc;
+  color: var(--card-text);
   font-size: 14px;
   line-height: 1.55;
 }
@@ -296,7 +351,7 @@ h2 {
 
 .skill-detail h4 {
   margin: 0 0 5px;
-  color: #d5f8ff;
+  color: var(--detail-title);
   font-size: 16px;
 }
 
@@ -318,8 +373,8 @@ h2 {
 .tool-list span {
   padding: 7px 10px;
   border-radius: 8px;
-  color: #e0edf8;
-  background: rgba(170, 215, 255, 0.14);
+  color: var(--tool-text);
+  background: var(--tool-bg);
   font-family: "DM Mono", monospace;
   font-size: 11px;
 }
@@ -356,6 +411,11 @@ h2 {
 
   .nav-links a:not(.active) {
     display: none;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 12px;
   }
 
   .skills-heading,
