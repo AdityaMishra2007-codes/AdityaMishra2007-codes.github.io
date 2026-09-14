@@ -808,12 +808,12 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .info-card {
-  min-height: 205px;
-  padding: 22px 18px;
+  min-height: 0;
+  padding: 16px;
   border: 1px solid rgba(194, 225, 255, 0.14);
   border-radius: 18px;
   background: rgba(23, 38, 77, 0.58);
@@ -831,7 +831,7 @@ body {
 }
 
 .info-card h3 {
-  margin: 35px 0 10px;
+  margin: 24px 0 8px;
   color: var(--ink);
   font-size: 1.12rem;
   letter-spacing: -0.03em;
