@@ -10,19 +10,24 @@
   </head>
   <body>
     <main class="hero">
-      <nav class="navigation" aria-label="Primary navigation">
-        <a class="brand" href="index.html" aria-label="Aditya home">Aditya.</a>
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="navigation__links" id="primary-navigation">
+      <nav aria-label="Primary navigation">
+        <a class="logo" href="index.html" aria-label="Aditya home">Aditya<span>.</span></a>
+
+        <div class="nav-links">
           <a href="navbar/projects.html">Projects</a>
           <a href="navbar/skills.html">Skills</a>
           <a href="navbar/contact.html">Contact</a>
           <a href="navbar/about.html">About</a>
         </div>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          id="theme-toggle"
+          aria-label="Switch to light mode"
+        >
+          Light mode
+        </button>
       </nav>
 
       <section class="hero__content" id="top">
