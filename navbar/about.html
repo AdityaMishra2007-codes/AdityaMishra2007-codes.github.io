@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,21 +7,20 @@
   <meta name="description" content="Aditya Mishra, developer from Bihar studying at Techno India University, Kolkata. Open to freelance projects.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
   <header class="nav">
-    <a class="logo" href="#">Aditya<span>.</span></a>
+    <a class="logo" href="../index.html">Aditya<span>.</span></a>
     <nav class="nav-links" aria-label="Main">
-      <!-- LINK: replace each # with your page/section link -->
-      <a href="#">Projects</a>
-      <a href="#">Skills</a>
-      <a href="#">Contact</a>
-      <a href="#" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" type="button">Light mode</button>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">Light mode</button>
   </header>
 
   <main>
@@ -32,7 +31,7 @@
       </div>
       <p class="hero-text">
         I'm a developer from Bihar, currently studying at Techno India University, Kolkata.
-        I enjoy building <!-- EDIT: web apps / AI-powered tools --> projects that solve real problems,
+        I enjoy building web applications and AI-powered tools that solve real problems,
         and I like taking an idea all the way from concept to a working product.
       </p>
     </section>
@@ -47,11 +46,6 @@
       </div>
 
       <div class="panel-body">
-        <!-- PHOTO: put your headshot in the same folder and set src, e.g. src="aditya.jpg" -->
-        <figure class="photo">
-          <img src="" alt="Portrait of Aditya Mishra">
-        </figure>
-
         <div class="facts">
           <article class="fact">
             <p class="fact-label">Build with Gemma Hackathon</p>
@@ -70,48 +64,65 @@
           </article>
           <article class="fact">
             <p class="fact-label">Tech stack</p>
-            <h3><!-- EDIT: e.g. React, Node.js, Python, Firebase --></h3>
-            <p>I've been exploring <!-- EDIT: AI/ML, Gemma, etc. --> through hackathons and personal projects.</p>
+            <h3>MERN stack</h3>
+            <p>Building full-stack web development skills with MongoDB, Express, React, and Node.js—from interactive interfaces to APIs and data storage.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="built" aria-labelledby="built-title">
-      <h2 id="built-title">What I've built</h2>
-      <ul class="built-list">
-        <li>
-          <div>
-            <h3><!-- EDIT: Gemma hackathon project name --></h3>
-            <p><!-- EDIT: one line on what it does and your role --></p>
-          </div>
-          <a class="link-btn" href="#">View project</a> <!-- LINK: project link -->
-        </li>
-        <li>
-          <div>
-            <h3><!-- EDIT: SIH project name --></h3>
-            <p><!-- EDIT: one line on the problem it solves --></p>
-          </div>
-          <a class="link-btn" href="#">View project</a> <!-- LINK: project link -->
-        </li>
-      </ul>
+    <section class="stack" aria-labelledby="stack-title">
+      <div class="stack-heading">
+        <p class="eyebrow">Full-stack development</p>
+        <h2 id="stack-title">Getting to know the MERN stack.</h2>
+        <p class="stack-intro">
+          I’m growing my full-stack toolkit with JavaScript across the browser and server.
+          MERN brings together four technologies to build complete, data-driven web applications:
+        </p>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card">
+          <span class="stack-number">01 / INTERFACE</span>
+          <h3>React</h3>
+          <p>Build responsive, interactive user experiences from reusable components, and manage the changing state of an application.</p>
+        </article>
+        <article class="stack-card">
+          <span class="stack-number">02 / SERVER</span>
+          <h3>Node.js</h3>
+          <p>Run JavaScript on the server to handle application logic and connect the frontend with backend services.</p>
+        </article>
+        <article class="stack-card">
+          <span class="stack-number">03 / API</span>
+          <h3>Express</h3>
+          <p>Organize server routes and middleware to create APIs that receive requests, validate data, and return useful responses.</p>
+        </article>
+        <article class="stack-card">
+          <span class="stack-number">04 / DATA</span>
+          <h3>MongoDB</h3>
+          <p>Store and retrieve application data in a flexible document database, shaping data around what a product needs.</p>
+        </article>
+      </div>
+      <p class="stack-outro">
+        Together, these tools form an end-to-end workflow: React presents the experience,
+        Express and Node.js power the API, and MongoDB stores the data. I’m continuing to
+        strengthen each part through hands-on learning and projects.
+      </p>
     </section>
 
     <section class="cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Open to freelance work.</h2>
       <p>
-        I'm available for projects such as <!-- EDIT: websites, web apps, landing pages, AI integrations -->.
+        I'm available for projects such as websites, web apps, and AI integrations.
         If you have an idea, I'd love to hear about it.
       </p>
       <div class="cta-actions">
-        <a class="btn primary" href="#">View projects</a>   <!-- LINK: projects page -->
-        <a class="btn" href="#">Download resume</a>         <!-- LINK: resume PDF -->
-        <a class="btn" href="#">Contact me</a>              <!-- LINK: contact page or mailto: -->
+        <a class="btn primary" href="projects.html">View projects</a>
+        <a class="btn" href="contact.html">Contact me</a>
       </div>
       <ul class="socials">
-        <li><a href="mailto:">Email</a></li>      <!-- LINK: mailto:you@example.com -->
-        <li><a href="#">GitHub</a></li>           <!-- LINK: GitHub profile -->
-        <li><a href="#">LinkedIn</a></li>         <!-- LINK: LinkedIn profile -->
+        <li><a href="mailto:">Email</a></li>
+        <li><a href="https://github.com/AdityaMishra2007-codes" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
       </ul>
     </section>
   </main>
@@ -119,20 +130,30 @@
   <script>
     (function () {
       var root = document.documentElement;
-      var btn = document.getElementById('themeToggle');
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
-      sync();
-      btn.addEventListener('click', function () {
-        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) {}
-        sync();
-      });
-      function sync() {
-        btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Light mode' : 'Dark mode';
+      var btn = document.getElementById('theme-toggle');
+      var nav = document.querySelector('.nav');
+      var savedTheme = localStorage.getItem('skills-theme');
+      var preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      var lastScrollY = window.scrollY;
+
+      function applyTheme(theme) {
+        root.dataset.theme = theme;
+        btn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+        btn.setAttribute('aria-label', 'Switch to ' + (theme === 'light' ? 'dark' : 'light') + ' mode');
       }
+
+      applyTheme(savedTheme || preferredTheme);
+      btn.addEventListener('click', function () {
+        var nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('skills-theme', nextTheme);
+        applyTheme(nextTheme);
+      });
+
+      window.addEventListener('scroll', function () {
+        var currentScrollY = window.scrollY;
+        nav.classList.toggle('nav-hidden', currentScrollY > lastScrollY && currentScrollY > 100);
+        lastScrollY = currentScrollY;
+      }, { passive: true });
     })();
   </script>
 </body>
