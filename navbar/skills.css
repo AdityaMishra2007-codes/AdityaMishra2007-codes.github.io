@@ -78,12 +78,25 @@ body::before {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
   height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(24px, 5vw, 78px);
   border-bottom: 1px solid var(--nav-border);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, background-color 0.3s ease;
+}
+
+nav.nav-hidden {
+  transform: translateY(-110%);
 }
 
 .logo {
@@ -99,21 +112,26 @@ nav {
 }
 
 .nav-links a {
-  margin-left: 30px;
+  margin-left: 0;
   color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
+.nav-links {
+  display: flex;
+  gap: 2.4rem;
+}
+
 .theme-toggle {
-  padding: 8px 12px;
-  border: 1px solid var(--button-border);
-  border-radius: 8px;
-  color: var(--button-text);
-  background: var(--button-bg);
-  font: 500 12px "DM Mono", monospace;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(194, 225, 255, 0.35);
+  border-radius: 10px;
+  color: #d9e8ff;
+  background: rgba(43, 71, 132, 0.72);
+  font: 600 0.8rem "DM Mono", monospace;
   cursor: pointer;
   transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
@@ -124,6 +142,12 @@ nav {
   outline: none;
 }
 
+[data-theme="light"] .theme-toggle {
+  border-color: rgba(36, 95, 158, 0.35);
+  color: #174c80;
+  background: #e5edf5;
+}
+
 .nav-links a:hover,
 .nav-links .active {
   color: var(--cyan);
@@ -132,7 +156,7 @@ nav {
 main {
   max-width: 1370px;
   margin: auto;
-  padding: clamp(65px, 9vw, 130px) clamp(24px, 5vw, 78px) 90px;
+  padding: calc(clamp(65px, 9vw, 130px) + 82px) clamp(24px, 5vw, 78px) 90px;
 }
 
 .intro {
@@ -413,6 +437,10 @@ h2 {
 @media (max-width: 540px) {
   nav {
     height: 65px;
+  }
+
+  main {
+    padding-top: calc(clamp(65px, 9vw, 130px) + 65px);
   }
 
   .nav-links a:not(.active) {

@@ -21,6 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const nav = document.querySelector('nav');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    nav.classList.toggle('nav-hidden', currentScrollY > lastScrollY && currentScrollY > 100);
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.navigation__links');
 

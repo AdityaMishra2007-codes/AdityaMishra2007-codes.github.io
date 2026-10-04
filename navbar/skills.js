@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(nextTheme);
   });
 
+  const nav = document.querySelector('nav');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    nav.classList.toggle('nav-hidden', currentScrollY > lastScrollY && currentScrollY > 100);
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
   const cards = Array.from(document.querySelectorAll('.skill-card'));
   const titleEl = document.getElementById('detail-title');
   const descEl = document.getElementById('detail-description');
