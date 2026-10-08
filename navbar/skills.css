@@ -131,7 +131,7 @@ nav.nav-hidden {
   border-radius: 10px;
   color: #d9e8ff;
   background: rgba(43, 71, 132, 0.72);
-  font: 600 0.8rem "DM Mono", monospace;
+  font: 600 0.8rem monospace;
   cursor: pointer;
   transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
